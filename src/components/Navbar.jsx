@@ -1,22 +1,64 @@
-import React from 'react';
-import './Navbar.css'; // if you have styles
+import React from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleScroll = (sectionId) => {
+        if (location.pathname !== "/") {
+            navigate("/");
+            setTimeout(() => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                }
+            }, 200); // Wait for home page to render
+        } else {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    };
+
     return ( <
         nav className = "navbar" >
         <
-        div className = "logo" > Nywele Affordable Hair Studio < /div> <
+        div className = "logo" >
+        <
+        Link to = "/"
+        style = {
+            { textDecoration: "none", color: "inherit" } } >
+        Nywele Affordable Hair Studio <
+        /Link> <
+        /div>
+
+        <
         ul className = "nav-links" >
         <
-        li > < a href = "#shop" > Shop < /a></li >
+        li > < Link to = "/shop" > Shop < /Link></li >
         <
-        li > < a href = "#testimonials" > Testimonials < /a></li >
+        li >
         <
-        li > < a href = "#about" > About < /a></li >
+        button onClick = {
+            () => handleScroll("testimonials") }
+        className = "link-btn" >
+        Testimonials <
+        /button> <
+        /li> <
+        li >
         <
-        /ul> < /
-        nav >
+        button onClick = {
+            () => handleScroll("about") }
+        className = "link-btn" >
+        About <
+        /button> <
+        /li> <
+        /ul> <
+        /nav>
     );
 }
 
-export default Navbar; // ✅ THIS LINE IS VERY IMPORTANT
+export default Navbar;
