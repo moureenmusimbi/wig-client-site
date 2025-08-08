@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // ✅ Import routes
+
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import FeaturedWigs from './components/FeaturedWigs';
+import About from './components/About';
+import Testimonials from './components/Testimonials';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import Shop from './components/Shop';
+
+// Create a Home component to group all homepage content
+const Home = () => (
+  <>
+    <Hero />
+    <FeaturedWigs />
+    <About />
+    <Testimonials />
+    <Contact />
+    <Footer />
+  </>
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />        {/* Homepage */}
+        <Route path="/shop" element={<Shop />} />    {/* Shop page */}
+      </Routes>
+    </Router>
   );
 }
 

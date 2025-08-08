@@ -1,0 +1,59 @@
+.featured {
+    background-color: #fff7f0;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.wig-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.wig-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 300px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.wig-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.wig-description {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.color-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #ccc;
+}
+
+.color-dot:hover {
+    border: 2px solid #000;
+}
+
+.wig-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+}
