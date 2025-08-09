@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './FeaturedWigs.css';
 
-// Import all wig images (color variants)
 import wig1Black from '../assets/wig1Black.jpg';
 import wig1Brown from '../assets/wig2-brown.jpeg';
 import wig1Gold from '../assets/wig3Red.jpg';
@@ -48,6 +47,40 @@ const wigs = [
       { color: '#FFFFFF', image: wig3White },
     ],
   },
+   {
+    id: 4,
+    name: 'Wavy Elegance',
+    description: 'Natural waves that bring out elegance in every look.',
+    price: 149,
+    variants: [
+      { color: '#D2B48C', image: wig3Tan },
+      { color: '#2F4F4F', image: wig3Dark },
+      { color: '#FFFFFF', image: wig3White },
+    ],
+  },
+  {
+    id: 5,
+    name: 'Sleek Straight',
+    description: 'A sleek straight wig perfect for formal and casual styles.',
+    price: 129,
+    variants: [
+      { color: '#000000', image: wig1Black },
+      { color: '#8B4513', image: wig1Brown },
+      { color: '#7e0303', image: wig1Gold },
+    ],
+  },
+  {
+    id: 6,
+    name: 'Curly Glamour',
+    description: 'Full-volume curls for a bold and glamorous look.',
+    price: 139,
+    variants: [
+      { color: '#8B0000', image: wig2Red },
+      { color: '#800080', image: wig2Purple },
+      { color: '#FF4500', image: wig2Orange },
+    ],
+  },
+  
 ];
 
 const FeaturedWigs = () => {
@@ -63,15 +96,19 @@ const FeaturedWigs = () => {
 
   return (
     <section className="featured">
-      <h2>Featured Wigs</h2>
+      <h2 className="section-title">✨ Featured Wigs ✨</h2>
+      <p className="section-subtitle">
+        Discover our most popular styles loved by our customers.
+      </p>
       <div className="wig-list">
         {wigs.map((wig, index) => (
           <div key={wig.id} className="wig-card">
-            <img src={selectedImages[index]} alt={wig.name} className="wig-img" />
-            <h3>{wig.name}</h3>
+            <div className="wig-image-container">
+              <img src={selectedImages[index]} alt={wig.name} className="wig-img" />
+            </div>
+            <h3 className="wig-name">{wig.name}</h3>
             <p className="wig-description">{wig.description}</p>
 
-            {/* Color selection */}
             <div className="color-options">
               {wig.variants.map((variant, i) => (
                 <span
@@ -79,6 +116,7 @@ const FeaturedWigs = () => {
                   className="color-dot"
                   style={{ backgroundColor: variant.color }}
                   onClick={() => handleColorClick(index, variant.image)}
+                  title={`Color option`}
                 ></span>
               ))}
             </div>
