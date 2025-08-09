@@ -3,7 +3,7 @@
 A modern, responsive ReactJS web application for selling wigs and beauty products.  
 The site features an elegant design, product catalog, and an engaging testimonials section to enhance customer trust and experience.
 
-**Live Application:** [View Here](https://wig-store.vercel.app)
+**Live Application:** [View Here](https://wig-client-site-sage.vercel.app/)
 
 ---
 
