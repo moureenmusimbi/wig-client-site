@@ -42,8 +42,12 @@ function Navbar() {
 
             {/* Nav Links */}
             <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-                <li>
+               
+                {/* <li>
                     <Link to="/shop" onClick={() => setMenuOpen(false)}>Shop</Link>
+                </li> */}
+                  <li>
+                    <button onClick={() => handleScroll("featured")} className="link-btn">Shop</button>
                 </li>
                 <li>
                     <button onClick={() => handleScroll("testimonials")} className="link-btn">Testimonials</button>

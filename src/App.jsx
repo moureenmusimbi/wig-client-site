@@ -7,7 +7,8 @@ import About from './components/About';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Shop from './components/Shop';
+
+
 
 // Create a Home component to group all homepage content
 const Home = () => (
@@ -27,7 +28,6 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />   
-        <Route path="/shop" element={<Shop />} /> 
       </Routes>
     </Router>
   );
