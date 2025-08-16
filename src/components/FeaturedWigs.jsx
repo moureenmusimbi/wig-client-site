@@ -8,7 +8,7 @@ const FeaturedWigs = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:3000/products');
+                const response = await fetch('https://wig-admin-backend-production.up.railway.app/products');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
